@@ -47,6 +47,22 @@
             text-align: center;
             padding: 10px;
         }
+        .iframe-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* Proporção 16:9 (pode ser ajustada conforme necessário) */
+    height: 0;
+    overflow: hidden;
+}
+
+.iframe-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+        }
     </style>
 </head>
 <body>
@@ -59,7 +75,9 @@
         <a href="sobre.html">Sobre</a>
         <a href="contato.html">Contato</a>
     </nav>
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdSQpoKNjnuyLYW_6eLMTymmz3yGH16f6uw8B_SL19XFU0pyA/viewform?embedded=true" width="640" height="684" frameborder="0" marginheight="0" marginwidth="0">Carregando…</iframe>
+    <div class="iframe-container">
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdSQpoKNjnuyLYW_6eLMTymmz3yGH16f6uw8B_SL19XFU0pyA/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Carregando…</iframe>
+    </div>
     <footer>
         <p>&copy; 2024 D. L. Azevedo. Todos os direitos reservados.</p>
     </footer>
