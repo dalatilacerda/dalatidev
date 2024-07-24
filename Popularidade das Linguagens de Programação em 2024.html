@@ -21,19 +21,26 @@
             color: white;
             padding: 1em;
             text-align: center;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
-        nav {
-            background-color: black;
+        .back-arrow {
+            position: absolute;
+            top: 1em;
+            left: 1em;
             color: white;
-            padding: 1em;
-            text-align: center;
-        }
-
-        nav a {
-            color: white;
-            margin: 0 1em;
             text-decoration: none;
+            font-size: 32px; /* Aumenta o tamanho da seta */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .back-arrow span {
+            font-size: 16px; /* Define o tamanho do texto proporcional ao tamanho da seta */
         }
 
         .container {
@@ -73,16 +80,20 @@
             padding: 1em 0;
         }
     </style>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
 </head>
 <body>
     <header>
+        <a href="javascript:goBack()" class="back-arrow">
+            &#8592;
+            <span>Voltar</span>
+        </a>
         <h1>Popularidade das Linguagens de Programação em 2024</h1>
     </header>
-    <nav>
-        <a href="#">Início</a>
-        <a href="#">Sobre mim</a>
-        <a href="#">Contato</a>
-    </nav>
     <div class="container">
         <h2>Introdução</h2>
         <p>A escolha da linguagem de programação pode determinar o sucesso de um projeto e a carreira de um desenvolvedor. Em 2024, várias linguagens continuam a ser populares devido à sua aplicabilidade e à comunidade de desenvolvedores que as apoiam. Este artigo explora as linguagens mais usadas e as tendências emergentes no mundo da programação.</p>
