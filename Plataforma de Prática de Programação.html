@@ -16,28 +16,24 @@
             font-family: Arial, sans-serif;
         }
 
-        header {
-            background-color: #1C1C23;
+        .back-arrow {
+            position: absolute;
+            top: 1em;
+            left: 1em;
             color: white;
-            padding: 1em;
-            text-align: center;
-        }
-
-        nav {
-            background-color: black;
-            color: white;
-            padding: 1em;
-            text-align: center;
-        }
-
-        nav a {
-            color: white;
-            margin: 0 1em;
             text-decoration: none;
+            font-size: 32px; /* Aumenta o tamanho da seta */
+            display: flex;
+            align-items: center;
+        }
+
+        .back-arrow span {
+            font-size: 16px; /* Define o tamanho do texto proporcional ao tamanho da seta */
+            margin-left: 5px; /* Adiciona espaço entre a seta e o texto */
         }
 
         .container {
-            padding: 20px;
+            padding: 25px;
             border: 1px solid #333;
             background-color: #2C2C2F;
             margin: 20px auto;
@@ -49,8 +45,9 @@
 
         .container h1 {
             font-size: 24px;
-            margin: 0;
+            margin: 60px 0 20px 0; /* Ajusta o espaço superior para dar espaço para a seta */
             color: #f0f0f0;
+            text-align: center;
         }
 
         .container h2, .container h3 {
@@ -72,38 +69,20 @@
             text-align: center;
             padding: 1em 0;
         }
-
-        .btn {
-            display: block;
-            width: 200px;
-            padding: 10px;
-            margin: 20px auto;
-            background-color: white;
-            color: black;
-            text-align: center;
-            text-decoration: none;
-            border-radius: 8px;
-            font-size: 16px;
-            border: 2px solid #333;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        .btn:hover {
-            background-color: #f0f0f0;
-            color: black;
-        }
     </style>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
 </head>
 <body>
-    <header>
-        <h1>Edabit: Plataforma de Prática de Programação</h1>
-    </header>
-    <nav>
-        <a href="#">Início</a>
-        <a href="#">Sobre mim</a>
-        <a href="#">Contato</a>
-    </nav>
+    <a href="javascript:goBack()" class="back-arrow">
+        &#8592;
+        <span>Voltar</span>
+    </a>
     <div class="container">
+        <h1>Edabit: Plataforma de Prática de Programação</h1>
         <h2>O que é Edabit?</h2>
         <p>Edabit é uma plataforma online projetada para ajudar programadores a melhorar suas habilidades através de desafios de codificação. Fundado em 2018, o site oferece uma vasta gama de exercícios práticos que cobrem diversos tópicos e linguagens de programação.</p>
 
@@ -121,7 +100,6 @@
         <h2>Resumo e Considerações Finais</h2>
         <p>Se você está em busca de uma maneira dinâmica e eficaz de aprimorar suas habilidades de programação, o Edabit é uma ferramenta altamente recomendada. Oferecendo uma ampla gama de desafios e um ambiente de aprendizado interativo, a plataforma proporciona uma experiência enriquecedora para programadores de todos os níveis.</p>
         <p>Ao explorar os desafios oferecidos, você não apenas melhora suas habilidades técnicas, mas também se conecta com uma comunidade de entusiastas da programação. O Edabit é mais do que uma plataforma de prática; é um recurso valioso para o crescimento contínuo como desenvolvedor.</p>
-        <a href="https://edabit.com" target="_blank" class="btn">Acesse o site</a>
     </div>
     <footer>
         <p>&copy; 2024 D. L. Azevedo. Todos os direitos reservados.</p>
