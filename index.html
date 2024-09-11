@@ -3,11 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Google Colab Integration</title>
+    <title>Interação com JavaScript</title>
+    <script>
+        function processInput() {
+            // Obtém o valor do campo de entrada
+            var userInput = document.getElementById('userInput').value;
+            var result;
+
+            // Condicional para determinar a resposta
+            if (userInput === 'hello') {
+                result = 'Você digitou "hello"!';
+            } else {
+                result = 'Você não digitou "hello".';
+            }
+
+            // Exibe o resultado
+            document.getElementById('result').innerText = result;
+        }
+    </script>
 </head>
 <body>
-    <h1>My Google Colab Notebook</h1>
-    <p>Click the link below to access the notebook:</p>
-    <a href="https://colab.research.google.com/drive/1cDvyZbUaBwTIOXXyIx4COyqWIwOEdKs4" target="_blank">Open Notebook</a>
+    <h1>Simulação de Input e Condicional</h1>
+    <input type="text" id="userInput" placeholder="Digite algo...">
+    <button onclick="processInput()">Enviar</button>
+    <p id="result"></p>
 </body>
 </html>
