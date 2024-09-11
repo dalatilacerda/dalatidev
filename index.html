@@ -58,6 +58,20 @@
             gap: 10px;
             margin-top: 10px;
         }
+        .link-button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            background-color: #555555; /* Fundo do botão */
+            color: #ffffff; /* Cor do texto do botão */
+            cursor: pointer;
+            font-size: 16px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .link-button:hover {
+            background-color: #666666; /* Fundo do botão ao passar o mouse */
+        }
     </style>
     <script>
         const senhaCorreta = "Mgraham2024"; // Senha desejada
@@ -109,7 +123,7 @@
 
     <div id="analise" class="hidden">
         <h1>Análise de Ações Modo Graham</h1>
-        <button onclick="window.location.href='https://statusinvest.com.br'">Status Invest</button><br><br>
+        <a href="https://statusinvest.com.br" target="_blank" class="link-button">Status Invest</a><br><br>
         <form id="analiseForm" onsubmit="event.preventDefault(); analisarAcao();">
             <label for="codigoAcao">Qual é o código da ação?: </label>
             <input type="text" id="codigoAcao" name="codigoAcao" required><br><br>
@@ -173,15 +187,3 @@
             <label>A dívida está abaixo de 3?: </label>
             <div class="checkbox-container">
                 <input type="radio" id="dividaSim" name="divida" value="sim" required>
-                <label for="dividaSim">Sim</label>
-                <input type="radio" id="dividaNao" name="divida" value="nao">
-                <label for="dividaNao">Não</label>
-            </div><br>
-
-            <button type="submit">Analisar</button>
-        </form>
-
-        <h2 id="resultado"></h2>
-    </div>
-</body>
-</html>
