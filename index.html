@@ -52,6 +52,12 @@
         .hidden {
             display: none;
         }
+        .checkbox-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
     </style>
     <script>
         const senhaCorreta = "Mgraham2024"; // Senha desejada
@@ -64,6 +70,12 @@
             } else {
                 alert("Senha incorreta. Tente novamente.");
             }
+        }
+
+        function mostrarSenha() {
+            const senhaInput = document.getElementById("senha");
+            const tipo = senhaInput.type === "password" ? "text" : "password";
+            senhaInput.type = tipo;
         }
 
         function analisarAcao() {
@@ -91,6 +103,7 @@
         <h1>Login</h1>
         <label for="senha">Senha: </label>
         <input type="password" id="senha" required>
+        <button onclick="mostrarSenha()">Mostrar/Ocultar Senha</button><br><br>
         <button onclick="verificarSenha()">Entrar</button>
     </div>
 
@@ -101,52 +114,68 @@
             <input type="text" id="codigoAcao" name="codigoAcao" required><br><br>
 
             <label>O P/VP está abaixo de 1,5?: </label>
-            <input type="radio" id="pvpSim" name="pvp" value="sim" required>
-            <label for="pvpSim">Sim</label>
-            <input type="radio" id="pvpNao" name="pvp" value="nao">
-            <label for="pvpNao">Não</label><br><br>
+            <div class="checkbox-container">
+                <input type="radio" id="pvpSim" name="pvp" value="sim" required>
+                <label for="pvpSim">Sim</label>
+                <input type="radio" id="pvpNao" name="pvp" value="nao">
+                <label for="pvpNao">Não</label>
+            </div><br>
 
             <label>O P/L está abaixo de 1,5?: </label>
-            <input type="radio" id="plSim" name="pl" value="sim" required>
-            <label for="plSim">Sim</label>
-            <input type="radio" id="plNao" name="pl" value="nao">
-            <label for="plNao">Não</label><br><br>
+            <div class="checkbox-container">
+                <input type="radio" id="plSim" name="pl" value="sim" required>
+                <label for="plSim">Sim</label>
+                <input type="radio" id="plNao" name="pl" value="nao">
+                <label for="plNao">Não</label>
+            </div><br>
 
             <label>A empresa está há mais de 30 anos no mercado?: </label>
-            <input type="radio" id="perenidadeSim" name="perenidade" value="sim" required>
-            <label for="perenidadeSim">Sim</label>
-            <input type="radio" id="perenidadeNao" name="perenidade" value="nao">
-            <label for="perenidadeNao">Não</label><br><br>
+            <div class="checkbox-container">
+                <input type="radio" id="perenidadeSim" name="perenidade" value="sim" required>
+                <label for="perenidadeSim">Sim</label>
+                <input type="radio" id="perenidadeNao" name="perenidade" value="nao">
+                <label for="perenidadeNao">Não</label>
+            </div><br>
 
             <label>Os dividendos foram constantes nos últimos 5 anos?: </label>
-            <input type="radio" id="dividendosSim" name="dividendos" value="sim" required>
-            <label for="dividendosSim">Sim</label>
-            <input type="radio" id="dividendosNao" name="dividendos" value="nao">
-            <label for="dividendosNao">Não</label><br><br>
+            <div class="checkbox-container">
+                <input type="radio" id="dividendosSim" name="dividendos" value="sim" required>
+                <label for="dividendosSim">Sim</label>
+                <input type="radio" id="dividendosNao" name="dividendos" value="nao">
+                <label for="dividendosNao">Não</label>
+            </div><br>
 
             <label>Os lucros foram crescentes nos últimos 10 anos?: </label>
-            <input type="radio" id="lucroSim" name="lucro" value="sim" required>
-            <label for="lucroSim">Sim</label>
-            <input type="radio" id="lucroNao" name="lucro" value="nao">
-            <label for="lucroNao">Não</label><br><br>
+            <div class="checkbox-container">
+                <input type="radio" id="lucroSim" name="lucro" value="sim" required>
+                <label for="lucroSim">Sim</label>
+                <input type="radio" id="lucroNao" name="lucro" value="nao">
+                <label for="lucroNao">Não</label>
+            </div><br>
 
             <label>A receita foi crescente nos últimos 10 anos?: </label>
-            <input type="radio" id="receitaSim" name="receita" value="sim" required>
-            <label for="receitaSim">Sim</label>
-            <input type="radio" id="receitaNao" name="receita" value="nao">
-            <label for="receitaNao">Não</label><br><br>
+            <div class="checkbox-container">
+                <input type="radio" id="receitaSim" name="receita" value="sim" required>
+                <label for="receitaSim">Sim</label>
+                <input type="radio" id="receitaNao" name="receita" value="nao">
+                <label for="receitaNao">Não</label>
+            </div><br>
 
             <label>O ROI está acima de 10%?: </label>
-            <input type="radio" id="roiSim" name="roi" value="sim" required>
-            <label for="roiSim">Sim</label>
-            <input type="radio" id="roiNao" name="roi" value="nao">
-            <label for="roiNao">Não</label><br><br>
+            <div class="checkbox-container">
+                <input type="radio" id="roiSim" name="roi" value="sim" required>
+                <label for="roiSim">Sim</label>
+                <input type="radio" id="roiNao" name="roi" value="nao">
+                <label for="roiNao">Não</label>
+            </div><br>
 
             <label>A dívida está abaixo de 3?: </label>
-            <input type="radio" id="dividaSim" name="divida" value="sim" required>
-            <label for="dividaSim">Sim</label>
-            <input type="radio" id="dividaNao" name="divida" value="nao">
-            <label for="dividaNao">Não</label><br><br>
+            <div class="checkbox-container">
+                <input type="radio" id="dividaSim" name="divida" value="sim" required>
+                <label for="dividaSim">Sim</label>
+                <input type="radio" id="dividaNao" name="divida" value="nao">
+                <label for="dividaNao">Não</label>
+            </div><br>
 
             <button type="submit">Analisar</button>
         </form>
