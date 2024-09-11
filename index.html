@@ -86,11 +86,11 @@
             var dividendos = document.querySelector('input[name="dividendos"]:checked').value;
             var lucro = document.querySelector('input[name="lucro"]:checked').value;
             var receita = document.querySelector('input[name="receita"]:checked').value;
-            var roi = document.querySelector('input[name="roi"]:checked').value;
+            var roe = document.querySelector('input[name="roe"]:checked').value;
             var divida = document.querySelector('input[name="divida"]:checked').value;
 
             if (pvp === 'sim' && pl === 'sim' && perenidade === 'sim' && dividendos === 'sim' &&
-                lucro === 'sim' && receita === 'sim' && roi === 'sim' && divida === 'sim') {
+                lucro === 'sim' && receita === 'sim' && roe === 'sim' && divida === 'sim') {
                 document.getElementById("resultado").innerText = codigoAcao + " é uma boa escolha segundo a análise.";
             } else {
                 document.getElementById("resultado").innerText = "Tente outra ação, a " + codigoAcao + " não passou na análise.";
@@ -162,12 +162,12 @@
                 <label for="receitaNao">Não</label>
             </div><br>
 
-            <label>O ROI está acima de 10%?: </label>
+            <label>O ROE está acima de 10%?: </label>
             <div class="checkbox-container">
-                <input type="radio" id="roiSim" name="roi" value="sim" required>
-                <label for="roiSim">Sim</label>
-                <input type="radio" id="roiNao" name="roi" value="nao">
-                <label for="roiNao">Não</label>
+                <input type="radio" id="roeSim" name="roe" value="sim" required>
+                <label for="roeSim">Sim</label>
+                <input type="radio" id="roeNao" name="roe" value="nao">
+                <label for="roeNao">Não</label>
             </div><br>
 
             <label>A dívida está abaixo de 3?: </label>
