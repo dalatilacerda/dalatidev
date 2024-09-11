@@ -1,31 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interação com JavaScript</title>
+    <title>Análise de Ações Modo Graham</title>
     <script>
-        function processInput() {
-            // Obtém o valor do campo de entrada
-            var userInput = document.getElementById('userInput').value;
-            var result;
+        function analisarAcao() {
+            var codigoAcao = document.getElementById("codigoAcao").value;
+            var pvp = document.querySelector('input[name="pvp"]:checked').value;
+            var pl = document.querySelector('input[name="pl"]:checked').value;
+            var perenidade = document.querySelector('input[name="perenidade"]:checked').value;
+            var dividendos = document.querySelector('input[name="dividendos"]:checked').value;
+            var lucro = document.querySelector('input[name="lucro"]:checked').value;
+            var receita = document.querySelector('input[name="receita"]:checked').value;
+            var roi = document.querySelector('input[name="roi"]:checked').value;
+            var divida = document.querySelector('input[name="divida"]:checked').value;
 
-            // Condicional para determinar a resposta
-            if (userInput === 'hello') {
-                result = 'Você digitou "hello"!';
+            if (pvp === 'sim' && pl === 'sim' && perenidade === 'sim' && dividendos === 'sim' &&
+                lucro === 'sim' && receita === 'sim' && roi === 'sim' && divida === 'sim') {
+                document.getElementById("resultado").innerText = codigoAcao + " é uma boa escolha segundo a análise.";
             } else {
-                result = 'Você não digitou "hello".';
+                document.getElementById("resultado").innerText = "Tente outra ação, a " + codigoAcao + " não passou na análise.";
             }
-
-            // Exibe o resultado
-            document.getElementById('result').innerText = result;
         }
     </script>
 </head>
 <body>
-    <h1>Simulação de Input e Condicional</h1>
-    <input type="text" id="userInput" placeholder="Digite algo...">
-    <button onclick="processInput()">Enviar</button>
-    <p id="result"></p>
+    <h1>Análise de Ações Modo Graham</h1>
+    <form id="analiseForm" onsubmit="event.preventDefault(); analisarAcao();">
+        <label for="codigoAcao">Qual é o código da ação?: </label>
+        <input type="text" id="codigoAcao" name="codigoAcao" required><br><br>
+
+        <label>O P/VP está abaixo de 1,5?: </label>
+        <input type="radio" id="pvpSim" name="pvp" value="sim" required>
+        <label for="pvpSim">Sim</label>
+        <input type="radio" id="pvpNao" name="pvp" value="nao">
+        <label for="pvpNao">Não</label><br><br>
+
+        <label>O P/L está abaixo de 1,5?: </label>
+        <input type="radio" id="plSim" name="pl" value="sim" required>
+        <label for="plSim">Sim</label>
+        <input type="radio" id="plNao" name="pl" value="nao">
+        <label for="plNao">Não</label><br><br>
+
+        <label>A empresa está há mais de 30 anos no mercado?: </label>
+        <input type="radio" id="perenidadeSim" name="perenidade" value="sim" required>
+        <label for="perenidadeSim">Sim</label>
+        <input type="radio" id="perenidadeNao" name="perenidade" value="nao">
+        <label for="perenidadeNao">Não</label><br><br>
+
+        <label>Os dividendos foram constantes nos últimos 5 anos?: </label>
+        <input type="radio" id="dividendosSim" name="dividendos" value="sim" required>
+        <label for="dividendosSim">Sim</label>
+        <input type="radio" id="dividendosNao" name="dividendos" value="nao">
+        <label for="dividendosNao">Não</label><br><br>
+
+        <label>Os lucros foram crescentes nos últimos 10 anos?: </label>
+        <input type="radio" id="lucroSim" name="lucro" value="sim" required>
+        <label for="lucroSim">Sim</label>
+        <input type="radio" id="lucroNao" name="lucro" value="nao">
+        <label for="lucroNao">Não</label><br><br>
+
+        <label>A receita foi crescente nos últimos 10 anos?: </label>
+        <input type="radio" id="receitaSim" name="receita" value="sim" required>
+        <label for="receitaSim">Sim</label>
+        <input type="radio" id="receitaNao" name="receita" value="nao">
+        <label for="receitaNao">Não</label><br><br>
+
+        <label>O ROI está acima de 10%?: </label>
+        <input type="radio" id="roiSim" name="roi" value="sim" required>
+        <label for="roiSim">Sim</label>
+        <input type="radio" id="roiNao" name="roi" value="nao">
+        <label for="roiNao">Não</label><br><br>
+
+        <label>A dívida está abaixo de 3?: </label>
+        <input type="radio" id="dividaSim" name="divida" value="sim" required>
+        <label for="dividaSim">Sim</label>
+        <input type="radio" id="dividaNao" name="divida" value="nao">
+        <label for="dividaNao">Não</label><br><br>
+
+        <button type="submit">Analisar</button>
+    </form>
+
+    <h2 id="resultado"></h2>
 </body>
 </html>
